@@ -14,13 +14,20 @@ class Counter extends Component {
     </ul>
     }
 
+    handleIncrement() {
+        console.log("Increment Clicked")
+    }
+
     render(){
         let classes = this.getBadgeClasses();
         
         return (
         <div>
             <span className={this.getBadgeClasses()}> {this.formatCount()}</span>
-            <button className="btn btn-secondary btn-sm">Increment</button>
+            <button 
+                onClick={this.handleIncrement} 
+                className="btn btn-secondary btn-sm"
+            >Increment</button>
             <section>{(this.state.tags.length === 0) && 'Please create a new Tag!' }</section>
             {this.renderTags()}
         </div>
